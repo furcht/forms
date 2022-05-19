@@ -66,7 +66,9 @@ Supported formats of input are as follows.
 **Validation Object**
 ```
 {
-    "INPUT_NAME": () => {
+    "INPUT_NAME": (value, valueObject) => {
+        "value" is the value in the input to test against
+        "valueObject" is the object containing all values in the form submission
         --return true for valid tests--
         --return message for failed tests--
     }
