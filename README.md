@@ -54,9 +54,13 @@ Supported formats of input are as follows.
 ## Javascript Features
 
 **$ROOT.forms.disable(inputID)** - Disables input using the input's ID
+
 **$ROOT.forms.enable(inputID)** - Enables input using the input's ID
+
 **$ROOT.forms.require(inputID)** - Sets an input to be Required using the input's ID
+
 **$ROOT.forms.reset(inputID)** - Resets the input using the input's ID
+
 **$ROOT.forms.validation(formID, obj)** - Pass a validation object to the form element ID
 
 **Validation Object**
