@@ -1,0 +1,24 @@
+{
+  "name": "forms",
+  "version": "1.0.0",
+  "description": "A set of form elements with support for validation built in vanilla JS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furcht/forms.git"
+  },
+  "author": "RV3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/furcht/forms/issues"
+  },
+  "homepage": "https://github.com/furcht/forms#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pug": "^3.0.2",
+    "sass": "^1.51.0"
+  }
+}

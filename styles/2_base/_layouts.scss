@@ -1,0 +1,9 @@
+.l-flex {
+    display: flex;
+    gap: 0.5em;
+    > * { flex-grow: 1; }
+
+    &-- {
+        &vertical { flex-direction: column; }
+    }
+}

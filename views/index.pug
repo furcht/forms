@@ -1,0 +1,168 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Admin
+
+        link(rel="stylesheet" href="/css/")
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.8.1/lottie.min.js" integrity="sha512-V1YyTKZJrzJNhcKthpNAaohFXBnu5K9j7Qiz6gv1knFuf13TW/3vpgVVhJu9fvbdW8lb5J6czIhD4fWK2iHKXA==" crossorigin="anonymous" referrerpolicy="no-referrer")
+
+        script.
+            var Rexus = {};
+
+        script(src="/js/ajax.service.js")
+        script(src="/js/formInputs.component.js" defer)
+
+        script(src="/js/newEvent.section.js" defer)
+    body 
+
+        form#baseEvents(action="/api/event" method="POST")
+            //- Details
+            fieldset 
+                legend Details
+
+                label.f-input
+                    span Title 
+                    input(type="text" name="evtTitle" placeholder="Event Title" required)
+
+                label.f-input
+                    span Description 
+                    textarea(name="evtDesc" placeholder="Brief details about the event" required)
+
+            //- Date/Time
+            fieldset 
+                legend Date/Time
+
+                label.f-input(data-show="evtEndDate")
+                    span Multi-Day Event
+                    input(type="checkbox" name="evtMultiDay")
+                
+                .l-flex
+                    .l-flex.l-flex--vertical
+                        label.f-input
+                            span Start Date
+                            input(type="date" name="evtStartDate" required)
+                    
+                        label.f-input
+                            span Start Time
+                            input(type="time" name="evtStartTime" required)
+
+                    .l-flex.l-flex--vertical
+                        label#evtEndDate.f-input.u-invisible
+                            span End Date
+                            input(type="date" name="evtEndDate" disabled required)            
+                        
+                        label.f-input
+                            span End Time
+                            input(type="time" name="evtEndTime" required)
+
+            //- Frequency
+            fieldset 
+                legend Frequency 
+
+                label.f-input(data-expand="recurrence")
+                    span Does Not Repeat
+                    input(type="checkbox" name="evtNoRepeat" checked)
+
+                #recurrence.u-collapsed.f-group
+                    label.f-input
+                        span Recurrence
+                        select(name="evtRecurrence" required)
+                            option(value="weekly" selected) Every Week
+                            option(value="biweekly") Every 2 Weeks
+                            option(value="triweekly") Every 3 Weeks
+                            option(value="monthly") Every 4 Weeks
+
+                    .l-flex
+                        label.f-input
+                            span Sun.
+                            input(type="checkbox" name="evtRecSun")
+
+                        label.f-input
+                            span Mon.
+                            input(type="checkbox" name="evtRecMon")
+                        
+                        label.f-input
+                            span Tue.
+                            input(type="checkbox" name="evtRecTue")
+
+                        label.f-input
+                            span Wed.
+                            input(type="checkbox" name="evtRecWed")
+
+                        label.f-input
+                            span Thu.
+                            input(type="checkbox" name="evtRecThu")
+                        
+                        label.f-input
+                            span Fri.
+                            input(type="checkbox" name="evtRecFri")
+
+                        label.f-input
+                            span Sat.
+                            input(type="checkbox" name="evtRecSat")
+
+            //- Options
+            fieldset 
+                legend Online Options 
+                .l-flex
+                    label.f-input
+                        span None 
+                        input(type="radio" name="evtOnline" value="none" required)
+                    label.f-input
+                        span Available Online 
+                        input(type="radio" name="evtOnline" value="partial" required)
+                    label.f-input
+                        span Online Only
+                        input(type="radio" name="evtOnline" value="yes" required)
+
+            //- Offsite
+            fieldset 
+                legend Offsite Location
+                label.f-input(data-expand="offsiteLocation")
+                    span On CCNLB property
+                    input(type="checkbox" name="evtOnsite" checked)
+                #offsiteLocation.u-collapsed.f-group
+                    label.f-input
+                        span Location Address 
+                        input(type="text" name="evtOffsiteAddress" placeholder="123 Main St." required)
+
+                    label.f-input
+                        span Location City 
+                        input(type="text" name="evtOffsiteCity" placeholder="Omaha" required)
+                    
+                    .l-flex
+                        label.f-input
+                            span Location State 
+                            select(name="evtOffsiteState" required)
+                                option(value="AZ") Arizona
+                                option(value="AK") Alaska
+                                option(value="AR") Arkansas
+                                option(value="CA" selected) California
+                                option(value="CO") Colorado
+
+                        label.f-input
+                            span Location Zip 
+                            input(type="number" name="evtOffsiteZip" placeholder="12345" required)
+
+            label.f-input
+                span Food Provided 
+                input(type="checkbox" name="evtFoodAvail")
+
+            label.f-input
+                span Childcare Provided 
+                input(type="checkbox" name="evtChildcareAvail")
+            
+
+            button(type="reset") Reset
+            button(type="submit") Submit
+
+//-
+    form(action="")
+        legend Announcements
+
+    form(action="")
+        legend Profiles

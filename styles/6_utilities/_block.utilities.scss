@@ -1,0 +1,12 @@
+.u-invisible {
+    visibility: hidden;
+    opacity: 0;
+    label { visibility: hidden; }
+}
+.u-hidden { display: none; }
+.u-collapsed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    label { visibility: hidden; }
+}
