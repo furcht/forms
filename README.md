@@ -1,5 +1,5 @@
 # Form Elements
----
+
 A hopefully not-to-complex form built with support for validation.
 Written in Vanilla JS on top of ExpressJS and Pug to handle styling and templating.
 Supported formats of input are as follows.

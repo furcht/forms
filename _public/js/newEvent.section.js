@@ -62,7 +62,7 @@ Rexus.forms.validation("baseEvents", {
 
     == LOCATION ==
     IF: evtOnsite: false
-        evtOffsiteAddress: "5882 California Avenue"
+        evtOffsiteAddress: "123 Main Street"
         evtOffsiteCity: "Long Beach"
         evtOffsiteState: "CA"
         evtOffsiteZip: "90805"
